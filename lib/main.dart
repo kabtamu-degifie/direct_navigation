@@ -20,7 +20,7 @@ class _MyAppState extends State<MyApp> {
       // home: const FirstScreen(),
       routes: {
         '/': (_) => const FirstScreen(),
-        '/second-screen': (_) => const SecondScreen()
+        SecondScreen.routeName: (_) => const SecondScreen()
       },
     );
   }

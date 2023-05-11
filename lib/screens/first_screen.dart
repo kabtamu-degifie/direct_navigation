@@ -4,11 +4,15 @@ import 'package:flutter/material.dart';
 class FirstScreen extends StatelessWidget {
   const FirstScreen({super.key});
 
+  // void gotoSecondScreen(BuildContext ctx) {
+  //   Navigator.push(
+  //     ctx,
+  //     MaterialPageRoute(builder: (context) => const SecondScreen()),
+  //   );
+  // }
+
   void gotoSecondScreen(BuildContext ctx) {
-    Navigator.push(
-      ctx,
-      MaterialPageRoute(builder: (context) => const SecondScreen()),
-    );
+    Navigator.of(ctx).pushNamed(SecondScreen.routeName);
   }
 
   @override
@@ -19,6 +23,7 @@ class FirstScreen extends StatelessWidget {
       ),
       body: Center(
           child: ElevatedButton(
+              // onPressed: () => gotoSecondScreen(context),
               onPressed: () => gotoSecondScreen(context),
               child: const Text("Go to second screen"))),
     );
