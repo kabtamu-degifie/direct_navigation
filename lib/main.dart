@@ -17,20 +17,15 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // home: const FirstScreen(),
+      home: const FirstScreen(),
       routes: {
         // '/': (_) => const FirstScreen(),
         // SecondScreen.routeName: (_) => const SecondScreen()
       },
-
       onGenerateRoute: (settings) {
         switch (settings.name) {
-          case '/':
-            (ctx) => (_) => const FirstScreen();
-            break;
           case SecondScreen.routeName:
-            (_) => const SecondScreen();
-            break;
+            return MaterialPageRoute(builder: (_) => const FirstScreen());
         }
       },
     );
