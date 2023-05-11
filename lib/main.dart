@@ -19,8 +19,19 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       // home: const FirstScreen(),
       routes: {
-        '/': (_) => const FirstScreen(),
-        SecondScreen.routeName: (_) => const SecondScreen()
+        // '/': (_) => const FirstScreen(),
+        // SecondScreen.routeName: (_) => const SecondScreen()
+      },
+
+      onGenerateRoute: (settings) {
+        switch (settings.name) {
+          case '/':
+            (ctx) => (_) => const FirstScreen();
+            break;
+          case SecondScreen.routeName:
+            (_) => const SecondScreen();
+            break;
+        }
       },
     );
   }
